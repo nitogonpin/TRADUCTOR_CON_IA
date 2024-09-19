@@ -4,7 +4,6 @@ import re
 ruta_origen = './paginas'
 ruta_destino = './paginas_limpias'
 
-
 os.makedirs(ruta_destino, exist_ok=True)
 
 def guardarTexto(texto, nombre_archivo):
@@ -14,10 +13,7 @@ def guardarTexto(texto, nombre_archivo):
 def limparTexto(texto, file):
     texto = re.sub(r" \n", " ", texto)
     print(texto)
-    guardarTexto(texto, file)
-    
-
-   
+    guardarTexto(texto, file)   
 
 def main():
     for root, dirs, files in os.walk(ruta_origen):
@@ -26,8 +22,7 @@ def main():
                 file_path = os.path.join(root, file)
                 with open(file_path, 'r') as f:
                     texto = f.read()
-                    limparTexto(texto, file)
-      
+                    limparTexto(texto, file)      
 
 if __name__ == '__main__':
     main()

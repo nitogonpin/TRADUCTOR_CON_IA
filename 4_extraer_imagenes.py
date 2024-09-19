@@ -5,7 +5,6 @@ ruta_destino_imagnes = './imagen_pdf'
 
 os.makedirs(ruta_destino_imagnes, exist_ok=True)
 
-
 def extraerImagenesPdf(pdf):
     pdf_document = fitz.open(pdf)
     # Iterar sobre las páginas
@@ -26,7 +25,6 @@ def extraerImagenesPdf(pdf):
 
 def main():
     extraerImagenesPdf("Deep Reinforcement Learning with Python (2024).pdf")
-
 
 if __name__ == "__main__":
     main()
