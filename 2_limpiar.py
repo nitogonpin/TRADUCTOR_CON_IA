@@ -10,57 +10,46 @@ def guardarTexto(texto, nombre_archivo):
     """
     Guarda el texto en un archivo con el nombre proporcionado.
 
-    Parameters:
+    Parámetros:
     texto (str): El texto a guardar.
     nombre_archivo (str): El nombre del archivo donde se guardará el texto.
 
     Returns:
     None
     """
-    with open(os.path.join(ruta_destino, nombre_archivo), 'w') as f:
-        f.write(texto)
+
     with open(os.path.join(ruta_destino, nombre_archivo), 'w') as f:
         f.write(texto)
 
 def limpiarTexto(texto, file):
     """
-    Cleans the given text by replacing occurrences of " \n" with a single space,
-    and then saves the cleaned text to a file with the given name.
+    Limpia el texto dado reemplazando las ocurrencias de " \n" con un solo espacio,
+    y luego guarda el texto limpio en un archivo con el nombre dado.
 
-    Parameters:
-    texto (str): The text to be cleaned.
-    file (str): The name of the file where the cleaned text will be saved.
+    Parámetros:
+    texto (str): El texto a limpiar.
+    file (str): El nombre del archivo donde se guardará el texto limpio.
 
-    Returns:
+    Retorna:
     None
     """
-    texto = re.sub(r" \n", " ", texto)
-    print(texto)
-    guardarTexto(texto, file)
     texto = re.sub(r" \n", " ", texto)
     print(texto)
     guardarTexto(texto, file)   
 
 def main():
     """
-    Walks through the directory tree starting at ruta_origen and performs the following actions for each .txt file found:
-    1. Constructs the full path of the file.
-    2. Opens the file and reads its contents.
-    3. Calls the limpiarTexto function with the file contents and the file name as arguments.
+    Recorre el árbol de directorios empezando en ruta_origen y realiza las siguientes acciones para cada archivo .txt encontrado:
+    1. Construye la ruta completa del archivo.
+    2. Abre el archivo y lee su contenido.
+    3. Llama a la función limpiarTexto con el contenido del archivo y el nombre del archivo como argumentos.
 
-    Parameters:
-    None
+    Parámetros:
+    Ninguno
 
-    Returns:
-    None
-    """
-    for root, dirs, files in os.walk(ruta_origen):
-        for file in files:
-            if file.endswith('.txt'):
-                file_path = os.path.join(root, file)
-                with open(file_path, 'r') as f:
-                    texto = f.read()
-                    limpiarTexto(texto, file)
+    Retorna:
+    Ninguno
+    """    
     for root, dirs, files in os.walk(ruta_origen):
         for file in files:
             if file.endswith('.txt'):

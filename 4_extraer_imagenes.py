@@ -21,6 +21,21 @@ def extraerImagenesPdf(pdf):
     Returns:
         None
     """
+    """
+    Abre un archivo PDF con la libreria PyMuPDF (fitz) y extrae las imágenes de cada página.
+
+    Luego, itera sobre las imágenes de cada página, las extrae y las guarda como archivos PNG.
+
+    El nombre de los archivos se forma como "imagen_<número_de_página>.png"
+    si hay una imagen en la página o "imagen_<número_de_página>_<número_de_imagen>.png"
+    si hay varias imágenes en la página.
+
+    Parameters:
+        pdf (str): La ruta del archivo PDF.
+
+    Returns:
+        None
+    """
     pdf_document = fitz.open(pdf)
     # Iterar sobre las páginas
     for page_index in range(len(pdf_document)):
