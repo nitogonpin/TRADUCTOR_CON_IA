@@ -10,7 +10,7 @@ def guardarTexto(texto, nombre_archivo):
     with open(os.path.join(ruta_destino, nombre_archivo), 'w') as f:
         f.write(texto)
 
-def limparTexto(texto, file):
+def limpiarTexto(texto, file):
     texto = re.sub(r" \n", " ", texto)
     print(texto)
     guardarTexto(texto, file)   
@@ -22,7 +22,7 @@ def main():
                 file_path = os.path.join(root, file)
                 with open(file_path, 'r') as f:
                     texto = f.read()
-                    limparTexto(texto, file)      
+                    limpiarTexto(texto, file)      
 
 if __name__ == '__main__':
     main()
