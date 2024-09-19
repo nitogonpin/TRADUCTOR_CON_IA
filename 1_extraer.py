@@ -4,9 +4,25 @@ import os
 
 
 def crearTxt(numero, texto):  
-  with open(f'./paginas/{numero}.txt', 'w') as f:
-    f.write(texto)
-    return True
+    """
+    Crea un archivo de texto con el nombre numero.txt en la carpeta paginas y 
+    escribe el texto en el archivo.
+
+    Parameters
+    ----------
+    numero : int
+        El numero del archivo.
+    texto : str
+        El texto a escribir en el archivo.
+
+    Returns
+    -------
+    bool
+        True si el archivo se ha creado correctamente.
+    """
+    with open(f'./paginas/{numero}.txt', 'w') as f:
+        f.write(texto)
+        return True
 
 
 def extraerTexto(pdf):
