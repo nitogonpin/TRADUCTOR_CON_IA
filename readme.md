@@ -10,5 +10,5 @@ curl -fsSL https://ollama.com/install.sh | sh
 Instalar el modelo empleado:
 
 ```bash
-ollama run llama3.1
+ollama run llama3.1:8b
 ```
