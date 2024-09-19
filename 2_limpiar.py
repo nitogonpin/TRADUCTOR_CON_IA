@@ -7,7 +7,6 @@ ruta_destino = './paginas_limpias'
 os.makedirs(ruta_destino, exist_ok=True)
 
 def guardarTexto(texto, nombre_archivo):
-def guardarTexto(texto, nombre_archivo):
     """
     Guarda el texto en un archivo con el nombre proporcionado.
 
@@ -23,7 +22,6 @@ def guardarTexto(texto, nombre_archivo):
     with open(os.path.join(ruta_destino, nombre_archivo), 'w') as f:
         f.write(texto)
 
-def limpiarTexto(texto, file):
 def limpiarTexto(texto, file):
     """
     Cleans the given text by replacing occurrences of " \n" with a single space,
@@ -43,7 +41,6 @@ def limpiarTexto(texto, file):
     print(texto)
     guardarTexto(texto, file)   
 
-def main():
 def main():
     """
     Walks through the directory tree starting at ruta_origen and performs the following actions for each .txt file found:
